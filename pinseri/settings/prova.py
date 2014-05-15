@@ -42,5 +42,4 @@ STATIC_URL = 'static/'
 # In production, this should be handled separately by your webserver or CDN.
 ROOT_URLCONF = 'pinseri.urls.dev'
 
-print "DEV"
-
+print "PROVA"

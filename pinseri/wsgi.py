@@ -15,7 +15,7 @@ framework.
 """
 import os
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE",
     "pinseri.settings.dev")
 
 # This application object is used by any WSGI server configured to use this
@@ -23,6 +23,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE",
 # setting points here.
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
+
+print "WSGI"
 
 # Apply WSGI middleware here.
 # from helloworld.wsgi import HelloWorldApplication
