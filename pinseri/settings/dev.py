@@ -21,8 +21,10 @@ DEFAULT_FROM_EMAIL = 'messenger@pinseri'
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 ALLOWED_HOSTS = [
-    '127.0.0.1', # Also allow FQDN and subdomains
+    '127.0.0.1', # Allow domain and subdomains
+    '127.0.0.1.', # Also allow FQDN and subdomains
     'vincenzorizza.pythonanywhere.com',
+    'vincenzorizza.pythonanywhere.com.',
 ]
 
 DATABASES = {

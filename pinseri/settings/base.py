@@ -28,20 +28,12 @@ USE_TZ = True
 #or Django won't pick them when trying to authenticate the user.
 #Don't miss ``django.contrib.auth.backends.ModelBackend`` if using ``django.contrib.auth``
 #application or users won't be able to login by username / password method.
-'''
-AUTH_AUTHENTICATION_BACKENDS = (
-    'social.backends.open_id.OpenIdAuth',
-    'social.backends.google.GoogleOpenId',
-    'social.backends.google.GoogleOAuth2',
-    'social.backends.google.GoogleOAuth',
-    'social.backends.twitter.TwitterOAuth',
-    'social.backends.yahoo.YahooOpenId',
-    'django.contrib.auth.backends.ModelBackend',
-)
-'''
+
 
 AUTHENTICATION_BACKENDS = (
-   'social.backends.open_id.OpenIdAuth',
+    'social.backends.open_id.OpenIdAuth',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.facebook.FacebookAppOAuth2',
     'social.backends.google.GoogleOpenId',
     'social.backends.google.GoogleOAuth2',
     'social.backends.google.GoogleOAuth',
@@ -94,7 +86,10 @@ LOGGING = {
         },
     }
 }
-LOGIN_REDIRECT_URL = '/'
+
+LOGIN_URL          = '/login-form/'
+LOGIN_REDIRECT_URL = '/logged-in/'
+LOGIN_ERROR_URL    = '/login-error/'
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
@@ -117,8 +112,15 @@ SECRET_KEY = '_iw9+=zl&^f!t+pny!^-#d1^q==7tvb79qy@tnq(!v0x-+^yd*'
 
 SOCIAL_AUTH_STORAGE = 'social.apps.django_app.me.models.DjangoStorage'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '427750234037595'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'a095d61d98f7cc0861daf09497020670'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/another-login-url/'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/new-users-redirect-url/'
+SOCIAL_AUTH_NEW_ASSOCIATION_REDIRECT_URL = '/new-association-redirect-url/'
+SOCIAL_AUTH_DISCONNECT_REDIRECT_URL = '/account-disconnected-redirect-url/'
+SOCIAL_AUTH_BACKEND_ERROR_URL = '/new-error-url/'
+SOCIAL_AUTH_COMPLETE_URL_NAME  = 'socialauth_complete'
+SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'socialauth_associate_complete'
+
+SOCIAL_AUTH_MODELS = 'social_auth.db.mongoengine_models'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -164,3 +166,9 @@ TEMPLATE_DIRS = (
 
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'pinseri.wsgi.application'
+
+#----SOCIAL KEY ---- #CAPIRE QUALE DELLE DUE SINTASSI FUNZIONA!!!
+SOCIAL_AUTH_FACEBOOK_KEY = '427750234037595'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'a095d61d98f7cc0861daf09497020670'
+FACEBOOK_APP_ID              = '427750234037595'
+FACEBOOK_API_SECRET          = 'a095d61d98f7cc0861daf09497020670'
