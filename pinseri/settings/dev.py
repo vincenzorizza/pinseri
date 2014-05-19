@@ -22,6 +22,7 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 ALLOWED_HOSTS = [
     '127.0.0.1', # Also allow FQDN and subdomains
+    'vincenzorizza.pythonanywhere.com',
 ]
 
 DATABASES = {
