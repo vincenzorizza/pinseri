@@ -2,7 +2,7 @@
 
 from pinseri.settings.base import *
 
-if socket.gethostname() == 'vincenzo-RC530-RC730':
+if socket.gethostname() == 'vincenzo-RC530-RC730' or socket.gethostname() == 'giles-liveconsole1':
     DEBUG = TEMPLATE_DEBUG = True
 
 else:
