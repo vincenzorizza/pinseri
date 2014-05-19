@@ -5,6 +5,7 @@
 import os, sys
 import pinseri as project_module
 import django.conf.global_settings as DEFAULT_SETTINGS
+import socket
 
 PROJECT_ROOT = os.path.dirname(os.path.realpath(project_module.__file__))
 

@@ -2,8 +2,15 @@
 
 from pinseri.settings.base import *
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+if socket.gethostname() == 'vincenzo-RC530-RC730':
+    DEBUG = TEMPLATE_DEBUG = True
+
+else:
+    DEBUG = TEMPLATE_DEBUG = False
+
+print "DEBUG = "
+print DEBUG
+
 COMPRESS_ENABLED = True
 
 SITE_ID = 1
@@ -12,6 +19,10 @@ INTERNAL_IPS = ('127.0.0.1', )
 #TODO: replace localhost with the domain name of the site
 DEFAULT_FROM_EMAIL = 'messenger@pinseri'
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+ALLOWED_HOSTS = [
+    '127.0.0.1', # Also allow FQDN and subdomains
+]
 
 DATABASES = {
     'default': {
