@@ -13,19 +13,31 @@
         <meta name="description" content="{% block meta_description %}{% endblock %}" />
         <meta name="author" content="{% block meta_author %}{% endblock %}" />
         <meta name="viewport" content="width=device-width" />
-        {% load compress %}
+        
+        {% block css %}
 
         <!-- Bootstrap -->
         <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
         <link href="{{ STATIC_URL }}css/bootstrap-theme.min.css" rel="stylesheet">
-        <link href="{{ STATIC_URL }}css/fbposter.css" rel="stylesheet">
+        <!--<link href="{{ STATIC_URL }}css/fbposter.css" rel="stylesheet">-->
+
+
+        <!--
+        {% load compress %}
         {% compress css %}
         <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
         {% endcompress %}
-        {% block css %}{% endblock %}
+        -->
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
+        <link rel="stylesheet/less" href="{{ STATIC_URL }}css/main.less" />
+        {% endblock %}
+
+        <!-- Extends css libraries -->
+        {% block ext_css %}{% endblock ext_css %}
 
         <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
@@ -41,10 +53,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#"><img src="img/pinseri1.png" alt="logo"/></a>
+              <a class="navbar-brand" href="#"><img id="logo" src="{{ STATIC_URL }}img/logo.png" alt="logo"/></a>
             </div>
             <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav  navbar-right">
+              <ul class="nav navbar-nav navbar-right" id="nav_top_right">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Service</a></li>
@@ -64,19 +76,21 @@
             </div><!--/.navbar-collapse -->
           </div>
         </div>
-
-        {% block content %}
-        {% endblock content %}
-
+        {% block header %}{% endblock header %}
+        <div class="container">
+            {% block content %}
+            {% endblock content %}
+        </div>
         {% block javascript_library %}
-        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
-        <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="{{ STATIC_URL }}js/vendor/bootstrap.min.js"></script>
-        <script src="{{ STATIC_URL }}js/plugins.js"></script>
-        <script src="{{ STATIC_URL }}js/main.js"></script>
+            <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+            <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+            <script src="{{ STATIC_URL }}js/vendor/bootstrap.min.js"></script>
+            <script src="{{ STATIC_URL }}js/plugins.js"></script>
+            <script src="{{ STATIC_URL }}js/main.js"></script>
         {% endblock javascript_library %}
-        {% block javascript %}
-        {% endblock javascript %}
+        
+        <!-- Extends javascript libraries -->
+        {% block ext_javascript %}{% endblock ext_javascript %}
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -86,5 +100,64 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
     {% endblock body %}
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-4">
+                    <h4>Contacts</h4>
+                    <ul>
+                      <li>Pinseri S.r.l.</li>
+                      <li>Via Vincenzo Statella 47</li>
+                      <li>56126 Pisa</li>
+                    </ul>
+                    <ul>
+                      <li>Telefono: +39 050 123456</li>
+                      <li>Fax: +39 050 78910</li>
+                      <li><a href="mailto:">info@pinseri.it</a></li>
+                    </ul>
+                </div>
+                <div class="hidden-phone col-sm-12 col-md-4">
+                    <h4>Social</h4>
+                    <div class="social">
+                      <div class="col-sm-12 col-lg-12">
+                        <a href="#"><i class="fa fa-facebook-square fa-3x social"></i></a>
+                        <a href="#"><i class="fa fa-twitter-square fa-3x social"></i></a>
+                        <a href="#"><i class="fa fa-youtube-square fa-3x social"></i></a>
+                        <a href="#"><i class="fa fa-rss-square fa-3x social"></i></a>
+                        <a href="#"><i class="fa fa-heart fa-3x social"></i></a>
+                      </div>
+                    </div>
+                    <h4>Links</h4>
+                    <ul>
+                      <li><a href="">Sitemap</a></li>
+                      <li><a href="">Fornitori</a></li>
+                      <li><a href="">Partner</a></li>
+                      <li><a href="">Sponsor</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <h4>Dove Siamo</h4>
+                    <div id="map-canvas"></div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                      <span>Copyright © Pinseri 2014</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <span><a href="#">Privacy Policy</a></span>
+                        <span><a href="#">Terms of Service</a></span>
+                        <span><a href="#">Sitemap</a></span>
+                    </div>
+                    <div class="col-sm-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     </body>
 </html>

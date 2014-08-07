@@ -55,7 +55,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.me',
     'thirdauth',
     'compressor',
-    'less',
+    'static_precompiler',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -136,6 +136,10 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'static_precompiler.finders.StaticPrecompilerFinder',
 )
 
 # List of callables that know how to import templates from various sources.
@@ -172,3 +176,10 @@ SOCIAL_AUTH_FACEBOOK_KEY = '427750234037595'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'a095d61d98f7cc0861daf09497020670'
 FACEBOOK_APP_ID              = '427750234037595'
 FACEBOOK_API_SECRET          = 'a095d61d98f7cc0861daf09497020670'
+
+STATIC_PRECOMPILER_COMPILERS = (
+    'static_precompiler.compilers.CoffeeScript',
+    'static_precompiler.compilers.SASS',
+    'static_precompiler.compilers.SCSS',
+    'static_precompiler.compilers.LESS',
+)

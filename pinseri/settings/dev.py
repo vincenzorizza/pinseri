@@ -2,13 +2,14 @@
 
 from pinseri.settings.base import *
 
-if socket.gethostname() == 'vincenzo-RC530-RC730' or socket.gethostname() == 'giles-liveconsole1':
+if socket.gethostname() == 'vincenzo-DOTS' or socket.gethostname() == 'giles-liveconsole1':
     DEBUG = TEMPLATE_DEBUG = True
 
 else:
     DEBUG = TEMPLATE_DEBUG = False
 
 print "DEBUG = "
+print socket.gethostname()
 print DEBUG
 
 COMPRESS_ENABLED = True

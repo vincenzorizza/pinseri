@@ -102,54 +102,50 @@ html,body {
 body{
     background-color: rgba(224, 214, 202, 0.5);
 }
-.top_page {min-height:100%;}
 @font-face {
     font-family: din;
     src: url('/static/fonts/DiCnRg.ttf');
 }
 body{
     font-family: din; /* no .ttf */
+    font-size: 1.2em;
 }
+
+#logo{
+    max-height: 100px;
+    margin-left: 30px;
+}
+
 #nav_top{
     background: none;
     background-color: rgba(255, 255, 255, 0.7);
     border: 0px;
-    max-height: 90px;
+    min-height: 70px;
 }
-#nav_top .navbar-brand img{
-    max-height: 60px;
-    margin-left: 30px;
+
+#nav_top_right li a{
+    min-height: 70px;
 }
 .top_page{
-    margin-top: 100px;
+    min-height:100%;
 }
+
 .btn-primary{
     background: #E4534A;
     border: 0px;
 }
+
 .top_exp {
     list-style: none;
 }
+
 .top_exp img{
     max-width: 120px;
 }
+
 .top_social img{
     max-width: 150px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    Helper classes
