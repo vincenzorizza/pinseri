@@ -103,8 +103,8 @@ textarea {
 @menu-border: 5px;
 @red1: #e6544a;
 @red2: #c74f46;
-@blue1: #199f8f;
-@blue2: #15887B;
+@blue1: #8CBFBD;
+@blue2: #B7D0C5;
 a{
     color: @blue1;
 }
@@ -130,17 +130,48 @@ body{
     font-size: 1.2em;
 }
 
+// PROVA
+
+#nav_top{
+    .nav-justified{
+        margin-top: 0px;
+        .prova{
+            min-width: 189px;
+        }
+        li{
+            min-width: 100px;
+            padding-top: 0px;
+        }
+        :hover{
+            color: @blue2;
+        }
+        a{
+            min-height: @menu-height + @menu-border;
+            text-shadow: 0px;
+            text-align: center;
+            line-height: 43px;
+            font-size: 1.1em;
+        }
+    }
+}
+
+//FINE PROVA
+
 #logo{
-    max-height: 100px;
-    margin-left: 30px;
+    max-height: 118px;
 }
 
 #nav_top{
     background: none;
     background-color: rgba(255, 255, 255, 0.7);
     border: 0px;
-    min-height: @menu-height + @menu-border;
+    height: @menu-height + @menu-border;
     margin-bottom: 0px;
+    .navbar-brand{
+        padding: 5px 15px 5px 15px;
+        float: none;
+        position: absolute;
+    }
 }
 #nav_top_right{
     li{

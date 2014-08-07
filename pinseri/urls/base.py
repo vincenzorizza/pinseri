@@ -14,4 +14,5 @@ urlpatterns = patterns('',
     url(r'^complete/facebook/$', TemplateView.as_view(template_name='thirdauth/logged.html'), name='home'),
     url('', include('social.apps.django_app.urls', namespace='social')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
+    url(r'^soon', TemplateView.as_view(template_name='comingsoon.html'), name='home'),
 )
