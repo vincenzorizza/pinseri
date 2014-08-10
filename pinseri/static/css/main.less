@@ -99,51 +99,67 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-@menu-height: 65px;
-@menu-border: 5px;
-@red1: #e6544a;
-@red2: #c74f46;
-@blue1: #8CBFBD;
-@blue2: #B7D0C5;
+@import "variables.less";
+
+@font-face {
+    font-family: din;
+    src: url('/static/fonts/DiCnRg.ttf');
+}
+
 a{
-    color: @blue1;
+    color: @red1;
 }
 a:hover{
-    color: @blue2;
-}
-body {
-    padding-top: @menu-height + @menu-border;
-    padding-bottom: 20px;
+    color: @red2;
 }
 html,body {
     height:100%;
 }
 body{
-    background-color: rgba(224, 214, 202, 0.5);
-}
-@font-face {
-    font-family: din;
-    src: url('/static/fonts/DiCnRg.ttf');
-}
-body{
+    /*background-color: rgba(224, 214, 202, 0.5);*/
     font-family: din; /* no .ttf */
     font-size: 1.2em;
+    padding-top: @menu-height + @menu-border;
+    padding-bottom: 20px;
 }
 
-// PROVA
+hr.hr-main{
+    margin: 0px 0px 0px 0px;
+    background-color: @yellow2;
+    border-top: 1px solid @brown1;
+}
 
+#logo{
+    max-height: 118px;
+}
 #nav_top{
+    background: none;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 0px;
+    height: @menu-height + @menu-border;
+    margin-bottom: 0px;
     .nav-justified{
         margin-top: 0px;
-        .prova{
+        li.li-brand{
             min-width: 189px;
+            .navbar-brand{
+                padding: 5px 15px 5px 15px;
+                float: none;
+                position: absolute;
+                margin-left: 0px;
+            }
         }
         li{
             min-width: 100px;
             padding-top: 0px;
-        }
-        :hover{
-            color: @blue2;
+            .active{
+                a{
+                    color: @blue2;
+                }
+            }
+            :hover{
+                color: @blue2;
+            }
         }
         a{
             min-height: @menu-height + @menu-border;
@@ -151,53 +167,7 @@ body{
             text-align: center;
             line-height: 43px;
             font-size: 1.1em;
-        }
-    }
-}
-
-//FINE PROVA
-
-#logo{
-    max-height: 118px;
-}
-
-#nav_top{
-    background: none;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 0px;
-    height: @menu-height + @menu-border;
-    margin-bottom: 0px;
-    .navbar-brand{
-        padding: 5px 15px 5px 15px;
-        float: none;
-        position: absolute;
-    }
-}
-#nav_top_right{
-    li{
-        min-width: 100px;
-        :hover{
-            color: @blue2;
-        }
-        a{
-            min-height: @menu-height + @menu-border;
-            text-shadow: 0px;
-            text-align: center;
-            line-height: @menu-height/2;
-            font-size: 1.1em;
-        }
-    }
-    li.active{
-        border-bottom: @menu-border solid @blue2;
-        a{
-            min-height: @menu-height;
-            background-color: @blue1;
-            background-image: none;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-        }
-        :hover{
-           color: #FFFFFF;
+            color: @blue1;
         }
     }
 }
@@ -226,25 +196,24 @@ footer {
     background-color: @red1;
     margin-top:50px;
     color: #FFFFFF;
-}
-footer div.container { padding:10px 5px; }
-footer h5 { text-transform:uppercase; font-size: 14px;}
-footer div.copyright {
-  background: @blue1;
-  border-top:1px solid @blue2;
-  font-size:0.9em;
-  a{
-    color: #FFFFFF;
-  }
-}
-footer ul { margin-left: -30px; }
-footer li { list-style-type:none; }
-footer .media-list img {
-  height:64px;
-  width:64px;
-}
-footer .social {
-  margin-left:5px;
+    h4{
+        color: #FFFFFF;
+    }
+    a{
+        color: #FFFFFF;
+    }
+    div.copyright {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: @blue1;
+        /*border-top:1px solid @blue2;*/
+        font-size:0.9em;
+        a{
+            color: #FFFFFF;
+        }
+    }
+    ul { margin-left: -30px; }
+    li { list-style-type:none; }
 }
 /* ==========================================================================
    Helper classes

@@ -26,6 +26,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1.', # Also allow FQDN and subdomains
     'vincenzorizza.pythonanywhere.com',
     'vincenzorizza.pythonanywhere.com.',
+    'pinseri.it',
+    'pinseri.it.',
 ]
 
 DATABASES = {

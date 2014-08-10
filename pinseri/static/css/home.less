@@ -1,8 +1,37 @@
-#myCarousel{
-	margin-bottom: 50px;
+@import "variables.less";
+
+#row1, #row2, #row3{
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.color-1{
+	background-color: #FFFFFF;
+}
+.color-2{
+	background-color: @yellow1;
 }
 #row1{
-	.img-circle{
-		max-width: 70%;
+	img{
+		max-width: 200px;
+	}
+}
+#row2, #row3{
+	h2{
+		font-size: 2.5em;
+		line-height: 0.8em;
+		span{
+			font-size: 0.7em;
+			/*color: #999;*/
+			color: @brown2;
+		}
+	}
+	img {
+		max-width: 80%;
+		.img-rounded{
+			margin-right: 25px;
+		}
+		.img-circle{
+			margin-left: 25px;
+		}
 	}
 }
