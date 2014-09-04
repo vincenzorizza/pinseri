@@ -19,7 +19,7 @@ textarea {
 }
 
 body {
-    font-size: 1em;
+    font-size: 14px;
     line-height: 1.4;
 }
 
@@ -123,52 +123,93 @@ body{
     padding-bottom: 20px;
 }
 
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #FFFF00;
+    color: #FFC0CB;
+}
+
 hr.hr-main{
     margin: 0px 0px 0px 0px;
     background-color: @yellow2;
     border-top: 1px solid @brown1;
 }
-
+.btn-success{
+    .gradient(@red1, @red2);
+    border-color: #F27674;
+}
+.btn-success:hover{
+    background-color: @red2;
+    border-color: #F27674;
+}
 #logo{
-    max-height: 118px;
+    max-height: (@menu-height+@menu-border)*2;
+}
+#logo-xs{
+    max-height: 50px;
 }
 #nav_top{
     background: none;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: fade(@background-menu, 60%);
     border: 0px;
-    height: @menu-height + @menu-border;
+    min-height: @menu-height + @menu-border;
     margin-bottom: 0px;
+    
+    @media (min-width:@screen-sm-min){.container{width:750px !important;}}
+    @media (min-width:@screen-md-min){.container{width:970px !important;}}
+    @media (min-width:@screen-lg-min){.container{width:1170px !important;}}
+    
+    @media (max-width:@screen-sm-min){
+        background-color: @background-menu;
+    }
+    .navbar-header{
+        .navbar-brand{
+            padding: 5px;
+        }
+    }
     .nav-justified{
         margin-top: 0px;
         li.li-brand{
-            min-width: 189px;
-            .navbar-brand{
-                padding: 5px 15px 5px 15px;
-                float: none;
-                position: absolute;
-                margin-left: 0px;
+            min-width: 65px;
+            a:hover{
+                background: none;
             }
         }
         li{
-            min-width: 100px;
-            padding-top: 0px;
             .active{
                 a{
                     color: @blue2;
                 }
             }
             :hover{
-                color: @blue2;
+                color: @blue1;
             }
         }
         a{
             min-height: @menu-height + @menu-border;
             text-shadow: 0px;
             text-align: center;
-            line-height: 43px;
-            font-size: 1.1em;
+            line-height: 50px;
+            font-size: 1.2em;
             color: @blue1;
+            position: absolute;
+            width: 100%;
         }
+        #logo{
+            max-width: 100%;
+            /*max-height: (@menu-height+@menu-border)*2;*/
+            left: 0;
+            text-align: center;
+            margin: auto;
+        }
+    }
+    .navbar-toggle:hover, .navbar-toggle:focus{
+        background-color: @red2;
+    }
+    .navbar-toggle{
+        background-color: @red1;
+    }
+    .navbar-collapse, .navbar-toggle{
+        border-color: @red1;
     }
 }
 .top_page{
@@ -198,22 +239,35 @@ footer {
     color: #FFFFFF;
     h4{
         color: #FFFFFF;
+        font-size: 1.1em;
+        font-weight: bold;
     }
     a{
         color: #FFFFFF;
     }
-    div.copyright {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        background: @blue1;
+    a:hover{
+        color: #FFFFFF;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    ul { margin-left: -40px; }
+    li { list-style-type:none; }
+    i.fa{
+        margin: 5px 10px 0px 0px;
+    }
+    div.join {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        background: @blue3;
         /*border-top:1px solid @blue2;*/
         font-size:0.9em;
         a{
             color: #FFFFFF;
         }
+        p{
+            margin: 0.5em auto;
+        }
     }
-    ul { margin-left: -30px; }
-    li { list-style-type:none; }
 }
 /* ==========================================================================
    Helper classes

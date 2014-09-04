@@ -13,7 +13,8 @@
         <meta name="description" content="{% block meta_description %}{% endblock %}" />
         <meta name="author" content="{% block meta_author %}{% endblock %}" />
         <meta name="viewport" content="width=device-width" />
-        
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/logo.png" />
+
         {% block css %}
 
         <!-- Bootstrap -->
@@ -31,6 +32,8 @@
         -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
         <link rel="stylesheet/less" href="{{ STATIC_URL }}css/main.less" />
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         {% endblock %}
 
         <!-- Extends css libraries -->
@@ -46,27 +49,35 @@
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
+        
         <nav class="navbar navbar-inverse navbar-fixed-top" id="nav_top" role="navigation">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>    
-          </div>
-          <div class="container navbar-collapse collapse">
-            <ul class="nav nav-justified">
-                <li><a href="#about">Service</a></li>
-                <li><a href="#contact">Product</a></li>
-                <li><a href="#contact">Order</a></li>
-                <li class="li-brand"><a class="navbar-brand" href="#"><img id="logo" src="{{ STATIC_URL }}img/logo.png" alt="logo"/></a></li>
-                <li><a href="#about">Prova</a></li>
-                <li><a href="#contact">Contacts</a></li>
-                <li><a href="#contact">About</a></li>
-            </ul>
-          </div>
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="nav">
+                        <a href="#" class="navbar-brand visible-xs"><img src="{{ STATIC_URL }}img/logo.png" id="logo-xs" alt="logo"/></a>
+                    </div>
+            
+                </div>
+          
+                <div class="navbar-collapse collapse">
+                    <ul class="nav nav-justified">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Product</a></li>
+                        <li class="li-brand"><a class="" href="#"><img id="logo" src="{{ STATIC_URL }}img/logo.png" alt="logo"/></a></li>
+                        <li><a href="#">Order</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-
+ 
         {% block header %}{% endblock header %}
 
         {% block content %}
@@ -98,55 +109,40 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-4">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="">About us</a></li>
+                        <li><a href="">Fornitori</a></li>
+                        <li><a href="">Privacy</a></li>
+                        <li><a href="">Terms</a></li>
+                        <li><a href="">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-4">
                     <h4>Contacts</h4>
                     <ul>
                       <li>Pinseri S.r.l.</li>
                       <li>Via Vincenzo Statella 47</li>
-                      <li>56126 Pisa</li>
-                    </ul>
-                    <ul>
-                      <li>Telefono: +39 050 123456</li>
-                      <li>Fax: +39 050 78910</li>
-                      <li><a href="mailto:">info@pinseri.it</a></li>
-                    </ul>
-                </div>
-                <div class="hidden-phone col-sm-12 col-md-4">
-                    <h4>Social</h4>
-                    <div class="social">
-                      <div class="col-sm-12 col-lg-12">
-                        <a href="#"><i class="fa fa-facebook-square fa-3x social"></i></a>
-                        <a href="#"><i class="fa fa-twitter-square fa-3x social"></i></a>
-                        <a href="#"><i class="fa fa-youtube-square fa-3x social"></i></a>
-                        <a href="#"><i class="fa fa-rss-square fa-3x social"></i></a>
-                        <a href="#"><i class="fa fa-heart fa-3x social"></i></a>
-                      </div>
-                    </div>
-                    <h4>Links</h4>
-                    <ul>
-                      <li><a href="">Sitemap</a></li>
-                      <li><a href="">Fornitori</a></li>
-                      <li><a href="">Partner</a></li>
-                      <li><a href="">Sponsor</a></li>
+                      <li>96100 Siracusa</li>
+                      <li>Tel. +39 0931 461964</li>
+                      <li>Cel. +39 389 1029649</li>
                     </ul>
                 </div>
                 <div class="col-sm-12 col-md-4">
-                    <h4>Dove Siamo</h4>
-                    <div id="map-canvas"></div>
+                    <h4>Join us on</h4>
+                    <ul>
+                        <li><a href="mailto:info@pinseri.it"><i class="fa fa-at fa-2x"></i><span>info@pinseri.it</span></a></li>
+                        <li><a href=""><i class="fa fa-facebook-square fa-2x"></i><span>Facebook.com/pinseri.food</span></a></li>
+                        <li><a href=""><i class="fa fa-instagram fa-2x"></i></span>@pinseri.food</span></a></li>
                 </div>
+
             </div>
         </div>
-        <div class="copyright">
+        <div class="join">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4">
-                      <span>Copyright © Pinseri 2014</span>
-                    </div>
-                    <div class="col-sm-4">
-                        <span><a href="#">Privacy Policy</a></span>
-                        <span><a href="#">Terms of Service</a></span>
-                        <span><a href="#">Sitemap</a></span>
-                    </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-12 text-center">
+                        <p>Copyright © Pinseri Srl, 2014</p>
                     </div>
                 </div>
             </div>
