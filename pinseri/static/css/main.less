@@ -112,15 +112,17 @@ a{
 a:hover{
     color: @red2;
 }
-html,body {
-    height:100%;
+html, body{
+    background-color: @background1;
+}  
+.backgroundcolor-2{
+    background-color: @background2;
 }
 body{
     /*background-color: rgba(224, 214, 202, 0.5);*/
     font-family: din; /* no .ttf */
     font-size: 1.2em;
     padding-top: @menu-height + @menu-border;
-    padding-bottom: 20px;
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
@@ -138,7 +140,7 @@ hr.hr-main{
     border-color: #F27674;
 }
 .btn-success:hover{
-    background-color: @red2;
+    .gradient(@red2, @red2);
     border-color: #F27674;
 }
 #logo{

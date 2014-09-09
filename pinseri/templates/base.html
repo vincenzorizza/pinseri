@@ -66,13 +66,21 @@
           
                 <div class="navbar-collapse collapse">
                     <ul class="nav nav-justified">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">Product</a></li>
-                        <li class="li-brand"><a class="" href="#"><img id="logo" src="{{ STATIC_URL }}img/logo.png" alt="logo"/></a></li>
-                        <li><a href="#">Order</a></li>
-                        <li><a href="#">Contacts</a></li>
+                        <li><a href="/prova/">Home</a></li>
+                        <li><a href="/prova/product/">Product</a></li>
+                        <li><a href="/prova/service/">Service</a></li>
+                        <li class="li-brand"><a class="" href=""><img id="logo" src="{{ STATIC_URL }}img/logo.png" alt="logo"/></a></li>
+                        <li><a href="/prova/order/">Contacts</a></li>
                         <li><a href="#">About</a></li>
+
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      Language <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+      ...
+    </ul>
+  </li>
                     </ul>
                 </div>
             </div>
