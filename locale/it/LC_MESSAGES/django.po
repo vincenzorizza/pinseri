@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-10 14:32-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: pinseri/templates/404.html:6
+msgid "Page Not Found"
+msgstr ""
+
+#: pinseri/templates/500.html:6 pinseri/templates/500.html.py:32
+msgid "Server Error"
+msgstr ""
+
+#: pinseri/templates/500.html:34
+msgid ""
+"Sorry, but the server encountered an error while processing your request."
+msgstr ""
+
+#: pinseri/templates/base.html:73
+msgid "Product"
+msgstr "Prodotto"
+
+#: pinseri/templates/base.html:74
+msgid "Service"
+msgstr "Servizio"
+
+#: pinseri/templates/base.html:76
+msgid "Contacts"
+msgstr "Contatti"
+
+#: pinseri/templates/comingsoon.html:67
+msgid "We are building something very cool. Be patient and stay tuned."
+msgstr ""
+"Stiamo costruendo un progetto davvero innovativo. Torna qui prossimamente."
+
+#: pinseri/templates/home.html:56
+msgid "Gusto"
+msgstr ""
+
+#: pinseri/templates/home.html:58
+msgid ""
+"Metodi antichi e ingredienti freschissimi garantiscono il vero sapore della "
+"pasta di mandorla della Sicilia"
+msgstr ""
+
+#~ msgid "Flavour"
+#~ msgstr "Gusto"

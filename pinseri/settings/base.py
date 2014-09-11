@@ -7,7 +7,9 @@ import pinseri as project_module
 import django.conf.global_settings as DEFAULT_SETTINGS
 import socket
 
-PROJECT_ROOT = os.path.dirname(os.path.realpath(project_module.__file__))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__)) #pinseri
+PROJECT_ROOT = os.path.dirname(os.path.realpath(project_module.__file__)) #pinseri/pinseri
+
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -17,7 +19,8 @@ ADMINS = (
 MANAGERS = ADMINS
 SITE_ID = 1
 TIME_ZONE = 'America/Chicago'
-LANGUAGE_CODE = 'en-us'
+# Default language, that will be used for requests without language prefix
+LANGUAGE_CODE = 'en'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -56,6 +59,26 @@ INSTALLED_APPS = (
     'thirdauth',
     'compressor',
     'static_precompiler',
+)
+
+#ugettext = lambda s: s
+#LANGUAGES = (
+#        ('en', u'English'),
+#        ('it', u'Italiano'),
+#)
+
+# supported languages
+LANGUAGES = (
+    ('en', 'English'),
+    ('it', 'Italiano'),
+)
+# enable django translation
+USE_I18N = True
+# Optional. If you want to use redirects, set this to True
+SOLID_I18N_USE_REDIRECTS = False
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, "locale"), # Assuming BASE_DIR is where your manage.py file is
 )
 
 # A sample logging configuration. The only tangible logging
@@ -101,6 +124,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'solid_i18n.middleware.SolidLocaleMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -142,6 +168,13 @@ STATICFILES_FINDERS = (
     'static_precompiler.finders.StaticPrecompilerFinder',
 )
 
+STATIC_PRECOMPILER_COMPILERS = (
+    'static_precompiler.compilers.CoffeeScript',
+    'static_precompiler.compilers.SASS',
+    'static_precompiler.compilers.SCSS',
+    'static_precompiler.compilers.LESS',
+)
+
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -158,7 +191,9 @@ TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'social.apps.django_app.context_processors.backends',
+    'django.core.context_processors.request',
     'social.apps.django_app.context_processors.login_redirect',
+    'pinseri.settings.context_processors.solid_i18n',
 )
 
 TEMPLATE_DIRS = (
@@ -177,9 +212,3 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'a095d61d98f7cc0861daf09497020670'
 FACEBOOK_APP_ID              = '427750234037595'
 FACEBOOK_API_SECRET          = 'a095d61d98f7cc0861daf09497020670'
 
-STATIC_PRECOMPILER_COMPILERS = (
-    'static_precompiler.compilers.CoffeeScript',
-    'static_precompiler.compilers.SASS',
-    'static_precompiler.compilers.SCSS',
-    'static_precompiler.compilers.LESS',
-)
