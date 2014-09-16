@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-09-15 11:17-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: pinseri/templates/404.html:3
+msgid "Page Not Found"
+msgstr ""
+
+#: pinseri/templates/500.html:6 pinseri/templates/500.html.py:32
+msgid "Server Error"
+msgstr ""
+
+#: pinseri/templates/500.html:34
+msgid ""
+"Sorry, but the server encountered an error while processing your request."
+msgstr ""
+
+#: pinseri/templates/base.html:77
+msgid "Prodotto"
+msgstr "Product"
+
+#: pinseri/templates/base.html:78
+msgid "Servizio"
+msgstr "Service"
+
+#: pinseri/templates/base.html:80
+msgid "Contatti"
+msgstr "Contacts"
+
+#: pinseri/templates/base.html:109
+msgid "Fornitori"
+msgstr "Suppliers"
+
+#: pinseri/templates/base.html:116
+msgid "Contacts"
+msgstr ""
+
+#: pinseri/templates/comingsoon.html:67
+msgid "We are building something very cool. Be patient and stay tuned."
+msgstr ""
+
+#: pinseri/templates/home.html:69
+msgid "Gusto"
+msgstr "Taste"
+
+#: pinseri/templates/home.html:71
+msgid ""
+"Metodi antichi e ingredienti freschissimi garantiscono il vero sapore della "
+"pasta di mandorla della Sicilia"
+msgstr ""
+"Ancient methods and fresh ingredients ensure you the true flavor of the "
+"almond paste from Sicily"
+
+#: pinseri/templates/home.html:74
+msgid "Design"
+msgstr ""
+
+#: pinseri/templates/home.html:76
+msgid ""
+"Il biscotto alle mandorle diventa un prezioso omaggio nella sua ricercata "
+"confezione"
+msgstr ""
+"The almond biscuit becomes a precious gift in its sophisticated packaging"
+
+#: pinseri/templates/home.html:79
+msgid "Tradizione"
+msgstr "Tradition"
+
+#: pinseri/templates/home.html:81
+msgid ""
+"Un proverbio della tradizione accompagna la degustazione regalandoti "
+"un'esperienza piacevole ed esclusiva"
+msgstr ""
+"A traditional proverb accompanies the tasting giving you a pleasant and "
+"unique experience"
+
+#: pinseri/templates/home.html:89
+msgid "Un prodotto esclusivo."
+msgstr "An exclusive product."
+
+#: pinseri/templates/home.html:89
+msgid "Solo elementi di qualità."
+msgstr "Only quality elements. "
+
+#: pinseri/templates/home.html:90
+msgid ""
+"Il gusto unico e genuino dei biscotti alle mandorle si unisce al design e "
+"alla tradizione per dare vita ad un prodotto innovativo. La confezione, "
+"smart ed elegante, è ideata per adattarsi ad ogni situazione ed è "
+"utilizzabile come dessert line per hotel, ristoranti e B&b. All'interno, un "
+"<em>pensiero</em> in dialetto siciliano accompagna la degustazione e "
+"caratterizza il nostro prodotto, rendendolo particolare ed esclusivo."
+msgstr ""
+"The unique and genuine taste of the almond biscuits joins design tradition "
+"in order to create an innovative product. The package, smart and stylish, is "
+"designed to adapt to any situation and it can be used as a dessert line for "
+"hotels, restaurants and bed & breakfasts. Inside, a little message in "
+"Sicilian dialect called <em>Pinseri</em> (which means 'thought') accompanies "
+"the tasting and characterizes our product, making it particular and unique. "
+
+#: pinseri/templates/home.html:91
+msgid "Scopri in dettaglio tutte le caratteristiche del nostro prodotto"
+msgstr "Find out in detail all the features of our product."
+
+#: pinseri/templates/home.html:103
+msgid "Un servizio unico."
+msgstr "A special service."
+
+#: pinseri/templates/home.html:103
+msgid "Spedizioni in tutto il mondo."
+msgstr "Shipping all over the world."
+
+#: pinseri/templates/home.html:104
+msgid ""
+"I migliori pasticceri della Sicilia Orientale ci forniscono giornalmente le "
+"paste di mandorla che vengono successivamente confezionate a mano ed "
+"imballate con cura per mantenere intatte le confezioni. Effettuiamo "
+"spedizioni in tutto il mondo grazie alla qualità della ricetta originale "
+"delle paste di mandorla che mantiene il prodotto integro e ben conservato."
+msgstr ""
+"The best pastry chefs of Eastern Sicily provide us daily the almond biscuits "
+"which are then packaged by hand and packed with care to keep the packaging "
+"intact. We ship all over the world thanks to the quality of the original "
+"recipe of the almond paste that keeps the product intact and well preserved. "
+
+#: pinseri/templates/home.html:105
+msgid "Visualizza tutti i dettagli del nostro servizio"
+msgstr "View all the details of our service."
+
+#: pinseri/templates/home.html:112
+msgid "Contattaci"
+msgstr "Contact us "
+
+#: pinseri/templates/home.html:113
+msgid ""
+"Contattaci per effettuare il tuo ordine, ricevere un preventivo oppure "
+"semplicemente per avere maggiori informazioni. </br>Scopri inoltre tutte le "
+"nostre offerte."
+msgstr ""
+"Contact us to place your order, receive a quote or simply for more "
+"informations.</br>Discover also all our deals."
+
+#: pinseri/templates/home.html:114
+msgid "Ordina subito"
+msgstr "Order now"

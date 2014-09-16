@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import activate
 from solid_i18n.urls import solid_i18n_patterns
 
+
 admin.autodiscover()
 
 # without i18n
@@ -30,6 +31,5 @@ urlpatterns += solid_i18n_patterns('',
     url(r'^prova/order/$', TemplateView.as_view(template_name='order.html'), name='order'),
     url(r'^prova/contact/$', TemplateView.as_view(template_name='contact.html'), name='contact'),
     url(r'^prova/about/$', TemplateView.as_view(template_name='about.html'), name='about'),
-    url(r'^soon', TemplateView.as_view(template_name='comingsoon.html'), name='home'),
+    url(r'^soon/', TemplateView.as_view(template_name='comingsoon.html'), name='home'),
 )
-

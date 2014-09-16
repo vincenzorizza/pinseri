@@ -19,31 +19,35 @@
         <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/logo.png" />
 
         {% block css %}
+            <!-- Bootstrap -->
+            <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+            <link href="{{ STATIC_URL }}css/bootstrap-theme.min.css" rel="stylesheet">
+            <!--<link href="{{ STATIC_URL }}css/fbposter.css" rel="stylesheet">-->
 
-        <!-- Bootstrap -->
-        <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
-        <link href="{{ STATIC_URL }}css/bootstrap-theme.min.css" rel="stylesheet">
-        <!--<link href="{{ STATIC_URL }}css/fbposter.css" rel="stylesheet">-->
+<!--
+            {% load compress %}
+            {% if debug %}
+                <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
+                <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}css/main.less" />
+                <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+            {% else %}
+                {% compress css %}
+                    <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
+                    <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}less/style.less" />
+                {% endcompress %}
+            {% endif %}
+            -->
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
+            <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}css/main.less" />
+            <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+            <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-
-        <!--
-        {% load compress %}
-        {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
-        {% endcompress %}
-        -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-        <link rel="stylesheet/less" href="{{ STATIC_URL }}css/main.less" />
-
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+            <!-- Extends css libraries -->
+            {% block ext_css %}{% endblock ext_css %}
         {% endblock %}
 
-        <!-- Extends css libraries -->
-        {% block ext_css %}{% endblock ext_css %}
-
         <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+        
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
@@ -70,20 +74,20 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav nav-justified">
                         <li><a href="/prova/">Home</a></li>
-                        <li><a href="/prova/product/">{% trans "Product" %}</a></li>
-                        <li><a href="/prova/service/">{% trans "Service" %}</a></li>
+                        <li><a href="/prova/product/">{% trans "Prodotto" %}</a></li>
+                        <li><a href="/prova/service/">{% trans "Servizio" %}</a></li>
                         <li class="li-brand"><a class="" href=""><img id="logo" src="{{ STATIC_URL }}img/logo.png" alt="logo"/></a></li>
-                        <li><a href="/prova/order/">{% trans "Contacts" %}</a></li>
+                        <li><a href="/prova/order/">{% trans "Contatti" %}</a></li>
                         <li><a href="#">About</a></li>
 
-  <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      Language <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu" role="menu">
-      ...
-    </ul>
-  </li>
+                          <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                              Language <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                              ...
+                            </ul>
+                          </li>
                     </ul>
                 </div>
             </div>
@@ -93,6 +97,51 @@
 
         {% block content %}
         {% endblock content %}
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="">About us</a></li>
+                            <li><a href="">{% trans "Fornitori" %}</a></li>
+                            <li><a href="">Privacy</a></li>
+                            <li><a href="">Terms</a></li>
+                            <li><a href="">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <h4>{% trans "Contacts" %}</h4>
+                        <ul>
+                          <li>Pinseri S.r.l.</li>
+                          <li>Via Vincenzo Statella 47</li>
+                          <li>96100 Siracusa</li>
+                          <li>Ph. +39 389 1029649</li>
+                          <li>Tel. +39 0931 461964</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <h4>Join us on</h4>
+                        <ul>
+                            <li><a href="mailto:info@pinseri.it"><i class="fa fa-at fa-2x"></i><span>info@pinseri.it</span></a></li>
+                            <li><a href=""><i class="fa fa-facebook-square fa-2x"></i><span>Facebook.com/pinseri.food</span></a></li>
+                            <li><a href=""><i class="fa fa-instagram fa-2x"></i></span>@pinseri.food</span></a></li>
+                    </div>
+
+                </div>
+            </div>
+            <div class="join">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <p>Copyright © Pinseri Srl, 2014</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
         {% block javascript_library %}
             <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
@@ -114,50 +163,5 @@
         </script>
 
     {% endblock body %}
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-4">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="">About us</a></li>
-                        <li><a href="">Fornitori</a></li>
-                        <li><a href="">Privacy</a></li>
-                        <li><a href="">Terms</a></li>
-                        <li><a href="">Sitemap</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <h4>Contacts</h4>
-                    <ul>
-                      <li>Pinseri S.r.l.</li>
-                      <li>Via Vincenzo Statella 47</li>
-                      <li>96100 Siracusa</li>
-                      <li>Tel. +39 0931 461964</li>
-                      <li>Cel. +39 389 1029649</li>
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-4">
-                    <h4>Join us on</h4>
-                    <ul>
-                        <li><a href="mailto:info@pinseri.it"><i class="fa fa-at fa-2x"></i><span>info@pinseri.it</span></a></li>
-                        <li><a href=""><i class="fa fa-facebook-square fa-2x"></i><span>Facebook.com/pinseri.food</span></a></li>
-                        <li><a href=""><i class="fa fa-instagram fa-2x"></i></span>@pinseri.food</span></a></li>
-                </div>
-
-            </div>
-        </div>
-        <div class="join">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <p>Copyright © Pinseri Srl, 2014</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
     </body>
 </html>

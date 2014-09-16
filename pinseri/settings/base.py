@@ -20,7 +20,7 @@ MANAGERS = ADMINS
 SITE_ID = 1
 TIME_ZONE = 'America/Chicago'
 # Default language, that will be used for requests without language prefix
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'it'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -45,6 +45,12 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
+
+#COMPRESS_ENABLED = True
+#COMPRESS_PRECOMPILERS = (
+#   ('text/less', 'lessc {infile} {outfile}'),
+#)
+
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
@@ -60,12 +66,6 @@ INSTALLED_APPS = (
     'compressor',
     'static_precompiler',
 )
-
-#ugettext = lambda s: s
-#LANGUAGES = (
-#        ('en', u'English'),
-#        ('it', u'Italiano'),
-#)
 
 # supported languages
 LANGUAGES = (
@@ -160,10 +160,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'django.contrib.staticfiles.finders.DefaultStorageFinder',
     'compressor.finders.CompressorFinder',
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     # other finders..
     'static_precompiler.finders.StaticPrecompilerFinder',
 )

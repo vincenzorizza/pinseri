@@ -32,7 +32,8 @@
         {% endcompress %}
         -->
         <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-        <link rel="stylesheet/less" href="{{ STATIC_URL }}css/main.less" />
+        <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}css/main.less" />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
         <style>
             #nav_top .navbar-brand{
                 position: relative;
@@ -52,7 +53,6 @@
         {% block ext_css %}{% endblock ext_css %}
 
         <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
     </head>
 
     <body class="{% block body_class %}{% endblock %}">

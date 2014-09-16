@@ -12,8 +12,6 @@ print "DEBUG = "
 print socket.gethostname()
 print DEBUG
 
-COMPRESS_ENABLED = True
-
 SITE_ID = 1
 INTERNAL_IPS = ('127.0.0.1', )
 
@@ -45,7 +43,7 @@ DATABASES = {
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 # Overwrite default ROOT_URLCONF to include static file serving by Django.
 # In production, this should be handled separately by your webserver or CDN.
@@ -60,7 +58,8 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    #os.path.join(PROJECT_ROOT, 'static'),
+    #os.path.join(PROJECT_ROOT, 'static/css/'),
+    #"/home/vincenzo/Projects/Django/pinseri/pinseri/static",
 )
 
 
