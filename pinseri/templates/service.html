@@ -1,98 +1,50 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block ext_css %}
-    <link rel="stylesheet/less" href="{{ STATIC_URL }}css/home.less" /> 
+    <link rel="stylesheet/less" href="{{ STATIC_URL }}css/page.less" /> 
 {% endblock %}
-{% block body_class %}{{ block.super }}page{% endblock %}
+{% block body_class %}{{ block.super }}service{% endblock %}
 {% block header %}
 	
 {% endblock %}
 {% block content %}
-    <!-- Add your site or application content here -->
-	<div class="container">
-		<h1>Il nostro Servizio</h1>
-    <div class="row">
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-		<div class="row">
-			<form action="/i18n/setlang/" method="post">
-			{% csrf_token %}
-			<input name="next" type="hidden" value="{{ redirect_to }}" />
-			<select name="language">
-			{% get_language_info_list for LANGUAGES as languages %}
-			{% for language in languages %}
-			<option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
-			{% endfor %}
-			</select>
-			<input type="submit" value="Go" />
-			</form>
-		</div>
-		<div class ="row">
-			{% block lang_choose %}
-            <ul id="set_lang" class="nav pull-left">
-              {% if example_vars.SOLID_I18N_USE_REDIRECTS %}
-                {% if LANGUAGE_CODE == 'en' %}
-                  <li>
-                    <form action="/i18n/setlang/" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{request.get_full_path}}" />
-                    <input name="language" type="hidden" value="en" />
-                    <input type="submit" class="lang_active" value="EN" />
-                    </form>
-                  </li>
-                  <li>
-                    <form action="/i18n/setlang/" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="/it{{request.get_full_path}}" />
-                    <input name="language" type="hidden" value="it" />
-                    <input type="submit" value="IT" />
-                    </form>
-                  </li>
-                {% else %}
-                  <li>
-                    <form action="/i18n/setlang/" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{request.get_full_path|slice:'3:'}}" />
-                    <input name="language" type="hidden" value="en" />
-                    <input type="submit" value="EN" />
-                    </form>
-                  </li>
-
-                  <li>
-                    <form action="/i18n/setlang/" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{request.get_full_path}}" />
-                    <input name="language" type="hidden" value="it" />
-                    <input type="submit" class="lang_active" value="IT" />
-                    </form>
-                  </li>
-                {% endif %}
-              {% else %}
-                    {% if LANGUAGE_CODE == 'en' %}
-                      <li><a class="lang_active" href="{{request.get_full_path}}" >EN</a></li>
-                      <li><a href="/it{{request.get_full_path}}" >IT</a></li>
-                    {% else %}
-                      <li><a href="{{request.get_full_path|slice:'3:'}}" >EN</a></li>
-                      <li><a class="lang_active" href="{{request.get_full_path}}" >IT</a></li>
-                    {% endif %}
-              {% endif %}
-              </ul>
-            {% endblock lang_choose %}
-		</div>
-	</div>
+  <div class="backgroundcolor-2">
+    <div class="container page-container">
+  		<h1>Il nostro Servizio</h1>
+      <div class="row hidden-sm">
+        <div class="col-md-12"><img class="img-responsive center-block" id="img-servizio" src="{{ STATIC_URL }}img/servizio.png"></div>
+      </div>
+  		<div class="row" id="col-servizio">
+        <div class="col-md-3">
+    			<h2>Raccolta</h2>
+          <p>
+            La raccolta avviene tra la fine di Agosto e l'inizio di Settembre, quando le mandorle aprono il mallo. I contadini si recano nei campi all'alba, preparando i teli, le verghe per batterle, i sacchi necessari per trasportale. </br>
+            Quella della raccolta è un'operazione lunga e minuziosa attraverso la quale vengono selezionati solo i frutti migliori. Dopo la raccolta, le mandorle vengono lasciate essiccare esclusivamente al sole, per poi essere gustate singolarmente o utilizzate in svariate ricette. </p>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <h2>Produzione</h2>
+          <p>
+          Gli ingredienti freschissimi arrivano ai migliori pasticceri della Sicilia Orientale che, seguendo la ricetta originale della pasta reale, producono i nostri biscotti alle mandorle. Pochi ingredienti e raffinata qualità, garantiscono un prodotto che ha il gusto e il profumo della tradizione siciliana.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <h2>Spedizione</h2>
+          <p>
+            Ci rechiamo personalmente nelle nostre pasticcerie di fiducia, per controllare e assicurare la qualità del prodotto. Confezioniamo manualmente ogni scatola di biscotti, ponendovi tutta la nostra cura e attenzione, per garantire l'integrità del prodotto. Ogni biscotto è un piccolo assaggio di squisitezza, che diventa un dono all'interno delle nostre eleganti confezioni.
+            L'efficacia della ricetta originale e il packaging ben studiato, ci permettono di effettuare spedizioni a livello nazionale ed internazionale, senza che i tempi di attesa intacchino l'alta qualità del prodotto.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <h2>Cliente</h2>
+          <p>
+            I nostri maggiori clienti, tra cui hotel, ristoranti e B&B, utilizzano i nostri prodotti come courtesy line, per una piacevole accoglienza, o come dessert line, per terminare il pasto con dolcezza. 
+            E' per noi un piacere poterti regalare il vero sapore di Sicilia, e avvicinarti alle particolarità della nostra terra attraverso il pensiero che accompagna il biscotto, dedicato solo a te.
+          </p>
+        </div>
+  		</div>
+  	</div>
+  </div>
 {% endblock %}
 
 {% block ext_javascript}

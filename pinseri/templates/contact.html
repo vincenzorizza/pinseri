@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block ext_css %}
+    <link rel="stylesheet/less" href="{{ STATIC_URL }}css/page.less" /> 
+{% endblock %}
+{% block body_class %}{{ block.super }}page{% endblock %}
+{% block header %}
+	
+{% endblock %}
+{% block content %}
+  <div class="backgroundcolor-2">
+  	<div class="container page-container">
+  	<h1>Contact</h1>
+  	</div>
+  </div>
+{% endblock %}
+
+{% block ext_javascript}

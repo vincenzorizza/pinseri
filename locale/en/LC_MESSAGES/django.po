@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-09-15 11:17-0500\n"
+"POT-Creation-Date: 2014-09-26 17:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,35 +30,35 @@ msgid ""
 "Sorry, but the server encountered an error while processing your request."
 msgstr ""
 
-#: pinseri/templates/base.html:77
+#: pinseri/templates/base.html:76
 msgid "Prodotto"
 msgstr "Product"
 
-#: pinseri/templates/base.html:78
+#: pinseri/templates/base.html:77
 msgid "Servizio"
 msgstr "Service"
 
-#: pinseri/templates/base.html:80
+#: pinseri/templates/base.html:79
 msgid "Contatti"
 msgstr "Contacts"
 
-#: pinseri/templates/base.html:109
+#: pinseri/templates/base.html:108
 msgid "Fornitori"
 msgstr "Suppliers"
 
-#: pinseri/templates/base.html:116
+#: pinseri/templates/base.html:115
 msgid "Contacts"
 msgstr ""
 
-#: pinseri/templates/comingsoon.html:67
+#: pinseri/templates/comingsoon.html:74
 msgid "We are building something very cool. Be patient and stay tuned."
 msgstr ""
 
-#: pinseri/templates/home.html:69
+#: pinseri/templates/home.html:58
 msgid "Gusto"
 msgstr "Taste"
 
-#: pinseri/templates/home.html:71
+#: pinseri/templates/home.html:60
 msgid ""
 "Metodi antichi e ingredienti freschissimi garantiscono il vero sapore della "
 "pasta di mandorla della Sicilia"
@@ -66,22 +66,22 @@ msgstr ""
 "Ancient methods and fresh ingredients ensure you the true flavor of the "
 "almond paste from Sicily"
 
-#: pinseri/templates/home.html:74
+#: pinseri/templates/home.html:63
 msgid "Design"
 msgstr ""
 
-#: pinseri/templates/home.html:76
+#: pinseri/templates/home.html:65
 msgid ""
 "Il biscotto alle mandorle diventa un prezioso omaggio nella sua ricercata "
 "confezione"
 msgstr ""
 "The almond biscuit becomes a precious gift in its sophisticated packaging"
 
-#: pinseri/templates/home.html:79
+#: pinseri/templates/home.html:68
 msgid "Tradizione"
 msgstr "Tradition"
 
-#: pinseri/templates/home.html:81
+#: pinseri/templates/home.html:70
 msgid ""
 "Un proverbio della tradizione accompagna la degustazione regalandoti "
 "un'esperienza piacevole ed esclusiva"
@@ -89,15 +89,15 @@ msgstr ""
 "A traditional proverb accompanies the tasting giving you a pleasant and "
 "unique experience"
 
-#: pinseri/templates/home.html:89
+#: pinseri/templates/home.html:78
 msgid "Un prodotto esclusivo."
 msgstr "An exclusive product."
 
-#: pinseri/templates/home.html:89
+#: pinseri/templates/home.html:78
 msgid "Solo elementi di qualità."
 msgstr "Only quality elements. "
 
-#: pinseri/templates/home.html:90
+#: pinseri/templates/home.html:79
 msgid ""
 "Il gusto unico e genuino dei biscotti alle mandorle si unisce al design e "
 "alla tradizione per dare vita ad un prodotto innovativo. La confezione, "
@@ -113,19 +113,19 @@ msgstr ""
 "Sicilian dialect called <em>Pinseri</em> (which means 'thought') accompanies "
 "the tasting and characterizes our product, making it particular and unique. "
 
-#: pinseri/templates/home.html:91
+#: pinseri/templates/home.html:80
 msgid "Scopri in dettaglio tutte le caratteristiche del nostro prodotto"
 msgstr "Find out in detail all the features of our product."
 
-#: pinseri/templates/home.html:103
+#: pinseri/templates/home.html:92
 msgid "Un servizio unico."
 msgstr "A special service."
 
-#: pinseri/templates/home.html:103
+#: pinseri/templates/home.html:92
 msgid "Spedizioni in tutto il mondo."
 msgstr "Shipping all over the world."
 
-#: pinseri/templates/home.html:104
+#: pinseri/templates/home.html:93
 msgid ""
 "I migliori pasticceri della Sicilia Orientale ci forniscono giornalmente le "
 "paste di mandorla che vengono successivamente confezionate a mano ed "
@@ -138,15 +138,15 @@ msgstr ""
 "intact. We ship all over the world thanks to the quality of the original "
 "recipe of the almond paste that keeps the product intact and well preserved. "
 
-#: pinseri/templates/home.html:105
+#: pinseri/templates/home.html:94
 msgid "Visualizza tutti i dettagli del nostro servizio"
 msgstr "View all the details of our service."
 
-#: pinseri/templates/home.html:112
+#: pinseri/templates/home.html:101
 msgid "Contattaci"
 msgstr "Contact us "
 
-#: pinseri/templates/home.html:113
+#: pinseri/templates/home.html:102
 msgid ""
 "Contattaci per effettuare il tuo ordine, ricevere un preventivo oppure "
 "semplicemente per avere maggiori informazioni. </br>Scopri inoltre tutte le "
@@ -155,6 +155,6 @@ msgstr ""
 "Contact us to place your order, receive a quote or simply for more "
 "informations.</br>Discover also all our deals."
 
-#: pinseri/templates/home.html:114
+#: pinseri/templates/home.html:103
 msgid "Ordina subito"
 msgstr "Order now"

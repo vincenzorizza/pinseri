@@ -15,37 +15,44 @@
         <meta name="description" content="{% block meta_description %}{% endblock %}" />
         <meta name="author" content="{% block meta_author %}{% endblock %}" />
         <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/logo.png" />
         
         {% block css %}
 
-        <!-- Bootstrap -->
-        <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
-        <link href="{{ STATIC_URL }}css/bootstrap-theme.min.css" rel="stylesheet">
-        <!--<link href="{{ STATIC_URL }}css/fbposter.css" rel="stylesheet">-->
+            <!-- Bootstrap -->
+            <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
+            <link href="{{ STATIC_URL }}css/bootstrap-theme.min.css" rel="stylesheet">
+            <!--<link href="{{ STATIC_URL }}css/fbposter.css" rel="stylesheet">-->
 
-
-        <!--
-        {% load compress %}
-        {% compress css %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
-        {% endcompress %}
-        -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-        <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}css/main.less" />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
-        <style>
-            #nav_top .navbar-brand{
-                position: relative;
-            }
-            a, a:hover{
-                color: #CE4A46;
-            }
-            .copyright{
-                font-size: 0.9em;
-                line-height: 0.8em;
-            }
-        </style>
+            <link rel="stylesheet/css" type="text/css" href="{{ STATIC_URL }}css/normalize.css" />
+<!--
+            {% if debug %}
+                <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
+                <link rel="stylesheet/less" type="text/less" media="all" href="{{ STATIC_URL }}css/main.less" />
+                <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+            {% else %}
+            {% load compress %}
+                {% compress css %}
+                    <link rel="stylesheet/css" type="text/css" href="{{ STATIC_URL }}css/normalize.css" />
+                    <link rel="stylesheet/less" type="text/less" href="{{ STATIC_URL }}css/main.less" />
+                {% endcompress %}
+            {% endif %}    
+-->
+            <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
+                <link rel="stylesheet/less" type="text/less" media="all" href="{{ STATIC_URL }}css/main.less" />
+                <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
+            <style>
+                #nav_top .navbar-brand{
+                    position: relative;
+                }
+                a, a:hover{
+                    color: #CE4A46;
+                }
+                .copyright{
+                    font-size: 0.9em;
+                    line-height: 0.8em;
+                }
+            </style>
         {% endblock %}
 
 

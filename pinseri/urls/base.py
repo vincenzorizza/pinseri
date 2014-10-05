@@ -5,7 +5,8 @@ from django.views.generic import TemplateView
 from django.core.urlresolvers import reverse
 from django.utils.translation import activate
 from solid_i18n.urls import solid_i18n_patterns
-
+from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.autodiscover()
 
@@ -20,7 +21,18 @@ urlpatterns = patterns('',
     url('', include('django.contrib.auth.urls', namespace='auth')),
 
     (r'^i18n/', include('django.conf.urls.i18n')),
+    #COMPRESS_URL = r'%s/static' % os.path.abspath(os.path.dirname(__file__))
+
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT,}),
+
+    url(r'^prova/lang/', TemplateView.as_view(template_name='language.html'), name='lang'),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT,}),
+   )
+urlpatterns += staticfiles_urlpatterns()
 
 urlpatterns += solid_i18n_patterns('',
     # Home Page -- Replace as you prefer

@@ -18,7 +18,7 @@ ADMINS = (
 )
 MANAGERS = ADMINS
 SITE_ID = 1
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Rome'
 # Default language, that will be used for requests without language prefix
 LANGUAGE_CODE = 'it'
 USE_I18N = True
@@ -46,10 +46,21 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-#COMPRESS_ENABLED = True
-#COMPRESS_PRECOMPILERS = (
-#   ('text/less', 'lessc {infile} {outfile}'),
-#)
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lessc {infile} {outfile}'),
+    #('text/less', 'lessc {infile}'),
+)
+COMPRESS_CSS_FILTERS = [
+    #creates absolute urls from relative ones
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    #css minimizer
+    'compressor.filters.cssmin.CSSMinFilter'
+]
+
+#Solve Lighttpd bug on I18n redirect to mysite.fcgi
+FORCE_SCRIPT_NAME = ''
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -64,7 +75,9 @@ INSTALLED_APPS = (
     'social.apps.django_app.me',
     'thirdauth',
     'compressor',
-    'static_precompiler',
+    'django_activeurl',
+    #'static_precompiler',
+    #'debug_toolbar',
 )
 
 # supported languages
@@ -72,13 +85,12 @@ LANGUAGES = (
     ('en', 'English'),
     ('it', 'Italiano'),
 )
-# enable django translation
-USE_I18N = True
 # Optional. If you want to use redirects, set this to True
-SOLID_I18N_USE_REDIRECTS = False
+SOLID_I18N_USE_REDIRECTS = True
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, "locale"), # Assuming BASE_DIR is where your manage.py file is
+    #os.path.join(BASE_DIR, "locale"), # Assuming BASE_DIR is where your manage.py file is
+    os.path.join(PROJECT_ROOT, "locale"),
 )
 
 # A sample logging configuration. The only tangible logging
@@ -131,7 +143,7 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'pinseri.urls'
+ROOT_URLCONF = 'pinseri.urls.base'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '_iw9+=zl&^f!t+pny!^-#d1^q==7tvb79qy@tnq(!v0x-+^yd*'
@@ -152,7 +164,7 @@ SOCIAL_AUTH_MODELS = 'social_auth.db.mongoengine_models'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticroot')
 # Additional locations of static files
 
 # List of finder classes that know how to find static files in
@@ -161,23 +173,23 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django.contrib.staticfiles.finders.DefaultStorageFinder',
-    'compressor.finders.CompressorFinder',
     # other finders..
+    'compressor.finders.CompressorFinder',
     'static_precompiler.finders.StaticPrecompilerFinder',
 )
 
-STATIC_PRECOMPILER_COMPILERS = (
-    'static_precompiler.compilers.CoffeeScript',
-    'static_precompiler.compilers.SASS',
-    'static_precompiler.compilers.SCSS',
-    'static_precompiler.compilers.LESS',
-)
+#STATIC_PRECOMPILER_COMPILERS = (
+#   'static_precompiler.compilers.CoffeeScript',
+#    'static_precompiler.compilers.SASS',
+#   'static_precompiler.compilers.SCSS',
+#   'static_precompiler.compilers.LESS',
+#)
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
@@ -185,11 +197,11 @@ TEMPLATE_CONTEXT_PROCESSORS = DEFAULT_SETTINGS.TEMPLATE_CONTEXT_PROCESSORS + (
     'django.core.context_processors.debug',
     'django.core.context_processors.i18n',
     'django.core.context_processors.media',
+    'django.core.context_processors.request',
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
     'social.apps.django_app.context_processors.backends',
-    'django.core.context_processors.request',
     'social.apps.django_app.context_processors.login_redirect',
     'pinseri.settings.context_processors.solid_i18n',
 )

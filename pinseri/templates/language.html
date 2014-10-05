@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block ext_css %}
+    <link rel="stylesheet/less" href="{{ STATIC_URL }}css/page.less" /> 
+{% endblock %}
+{% block body_class %}{{ block.super }}page{% endblock %}
+{% block header %}
+  
+{% endblock %}
+{% block content %}
+  <!-- Add your site or application content here -->
+  <div class="container backgroundcolor-2">
+  <h1>Cambio lingua</h1>
+  <div class="row">
+    <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}" />
+    <select name="language">
+    {% get_language_info_list for LANGUAGES as languages %}
+    {% for language in languages %}
+    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+        {{ language.name_local }} ({{ language.code }})
+    </option>
+    {% endfor %}
+    </select>
+    <input type="submit" value="Go" />
+    </form>
+		</div>
+		<div class ="row">
+			{% block lang_choose %}
+            <ul id="set_lang" class="nav pull-left">
+              {% if example_vars.SOLID_I18N_USE_REDIRECTS %}
+                {% if LANGUAGE_CODE == 'en' %}
+                  <li>
+                    <form action="/i18n/setlang/" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{request.get_full_path}}" />
+                    <input name="language" type="hidden" value="en" />
+                    <input type="submit" class="lang_active" value="EN" />
+                    </form>
+                  </li>
+                  <li>
+                    <form action="/i18n/setlang/" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="/it{{request.get_full_path}}" />
+                    <input name="language" type="hidden" value="it" />
+                    <input type="submit" value="IT" />
+                    </form>
+                  </li>
+                {% else %}
+                  <li>
+                    <form action="/i18n/setlang/" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{request.get_full_path|slice:'3:'}}" />
+                    <input name="language" type="hidden" value="en" />
+                    <input type="submit" value="EN" />
+                    </form>
+                  </li>
+
+                  <li>
+                    <form action="/i18n/setlang/" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{request.get_full_path}}" />
+                    <input name="language" type="hidden" value="it" />
+                    <input type="submit" class="lang_active" value="IT" />
+                    </form>
+                  </li>
+                {% endif %}
+              {% else %}
+                    {% if LANGUAGE_CODE == 'en' %}
+                      <li><a class="lang_active" href="{{request.get_full_path}}" >EN</a></li>
+                      <li><a href="/it{{request.get_full_path}}" >IT</a></li>
+                    {% else %}
+                      <li><a href="{{request.get_full_path|slice:'3:'}}" >EN</a></li>
+                      <li><a class="lang_active" href="{{request.get_full_path}}" >IT</a></li>
+                    {% endif %}
+              {% endif %}
+              </ul>
+            {% endblock lang_choose %}
+		</div>
+  </div>
+{% endblock %}
+
+{% block ext_javascript}

@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block ext_css %}
+    <link rel="stylesheet/less" href="{{ STATIC_URL }}css/page.less" /> 
+{% endblock %}
+{% block body_class %}{{ block.super }}about{% endblock %}
+{% block header %}
+	
+{% endblock %}
+{% block content %}
+  <div class="backgroundcolor-2">
+  	<div class="container page-container">
+  		<h1>About</h1>
+        <div class="row">
+          <p>Pinseri nasce dalla volontà di far conoscere in tutto il mondo il gusto e la bontà dei prodotti tipici siciliani e il nostro sogno è quello di riuscire a regalare anche solo un assaggio della nostra magnifica terra. Amiamo la Sicilia e lavoriamo ogni giorno per realizzare il nostro obiettivo, coniugando qualità, tradizione e innovazione.
+          </p>
+        </div>
+      <h2>The Team</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row about-tabs">
+              <div class="col-md-8 col-md-offset-2">
+                <h3 class="text-center">Rita Valente</h3>
+                <img class="img-responsive center-block" src="{{ STATIC_URL }}img/rita.png">
+                <hr class="hr-main">
+                <h4 class="text-center">President Administrator</h4>
+                <hr class="hr-main">
+                <p>
+                  Co-fondatrice e direttrice di Pinseri
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row about-tabs">
+              <div class="col-md-8 col-md-offset-2">
+                <h3 class="text-center">Stefania Monterosso</h3>
+                <div class="">
+                  <img class="img-responsive center-block" src="{{ STATIC_URL }}img/stefania.png">
+                </div>
+                <hr class="hr-main">
+                <h4 class="text-center">Vice President Administrator</h4>
+                <hr class="hr-main">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row about-tabs">
+              <div class="col-md-8 col-md-offset-2">
+                <h3 class="text-center">Sara Rizza</h3>
+                <img class="img-responsive center-block" src="{{ STATIC_URL }}img/sara.png">
+                <hr class="hr-main">
+                <h4 class="text-center">Graphic and packaging designer</h4>
+                <hr class="hr-main">
+                <p>
+                  Le sue abilità e conoscenze riguardano il campo del design di prodotto e servizio. E' una profonda osservatrice del mondo circostante, da cui può trarre ogni sorta di ispirazione. Rischia di peggiorare sempre più la sua vista, passando le notti a guardare film, ma le scorte segrete di caffeina aiutano in questo. Amante di sushi e fumetti.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-2">
+            <div class="row about-tabs">
+              <div class="col-md-8 col-md-offset-2">
+                <h3 class="text-center">Carla Balistreri</h3>
+                <img class="img-responsive center-block" src="{{ STATIC_URL }}img/carla.png">
+                <hr class="hr-main">
+                <h4 class="text-center">Communication and marketing</h4>
+                <hr class="hr-main">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="row about-tabs">
+              <div class="col-md-8 col-md-offset-2">
+                <h3 class="text-center">Vincenzo Rizza</h3>
+                <img class="img-responsive center-block" src="{{ STATIC_URL }}img/enzo.png">
+                <hr class="hr-main">
+                <h4 class="text-center">Web developer</h4>
+                <hr class="hr-main">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+      <!--
+      <div class="row">
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <img class="img-responsive ritratti" src="{{ STATIC_URL }}img/sara.png">
+              <div class="thumbnail">
+
+                <div class="caption">
+                  <h3>Thumbnail label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  .</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="thumbnail">
+                <img class="img-responsive ritratti" src="{{ STATIC_URL }}img/carla.png">
+                <div class="caption">
+                  <h3>Thumbnail label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  .</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="thumbnail">
+                <img class="img-responsive ritratti" src="{{ STATIC_URL }}img/enzo.png">
+                <div class="caption">
+                  <h3>Thumbnail label</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  .</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-3">
+          <img class="img-responsive" src="{{ STATIC_URL }}img/rita.png">
+        </div>
+        <div class="col-md-2 col-md-offset-2">
+          <img class="img-responsive" src="{{ STATIC_URL }}img/stefania.png">
+        </div>
+      </div> -->
+		</div>
+  </div>
+{% endblock %}
+
+{% block ext_javascript}

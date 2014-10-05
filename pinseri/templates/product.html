@@ -1,101 +1,47 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block ext_css %}
-    <link rel="stylesheet/less" href="{{ STATIC_URL }}css/home.less" /> 
+    <link rel="stylesheet/less" href="{{ STATIC_URL }}css/page.less" /> 
 {% endblock %}
-{% block body_class %}{{ block.super }}page{% endblock %}
+{% block body_class %}{{ block.super }}product{% endblock %}
 {% block header %}
 	
 {% endblock %}
 {% block content %}
-    <!-- Add your site or application content here -->
-	<div class="container">
-		<h1>Il nostro prodotto</h1>
-    <div class="row">
-      <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-		<div class="row">
-			<form action="/i18n/setlang/" method="post">
-			{% csrf_token %}
-			<input name="next" type="hidden" value="{{ redirect_to }}" />
-			<select name="language">
-			{% get_language_info_list for LANGUAGES as languages %}
-			{% for language in languages %}
-			<option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
-			{% endfor %}
-			</select>
-			<input type="submit" value="Go" />
-			</form>
+  <div class="backgroundcolor-2">
+  	<div class="container page-container">
+  		<h1>Il nostro prodotto</h1>
+      <div class="row">
+        <div class="col-md-6">
+          <img class="img-responsive" src="{{ STATIC_URL }}img/ingredienti.png">
+        </div>
+        <div class="col-md-6 col-margined">
+          <h2>Una pasta degna di un re</h2>
+          <p>
+            In Italia la pasta di mandorle o pasta reale è utilizzata nella preparazione di diversi dolci ed è stata
+            riconosciuta come prodotto agroalimentare tradizionale siciliano e inserita nella lista dei prodotti agroalimentari tradizionali italiani (P.A.T) dal Ministero delle Politiche Agricole, Alimentari e Forestali
+            (Mipaaf). Il dolce ha avuto origine alla fine del 1100, nel convento palermitano della Martorana, annesso alla chiesa di Santa Maria dell'Ammiraglio, che deve il suo nome a Giorgio d'Antiochia, ammiraglio del re
+            Ruggero II. La pasta assunse il nome di "reale" in quanto, per la sua bontà, era "degna di un re". La pasta reale costituisce uno dei dolci più rappresentativi della Sicilia, dove i maestri pasticcieri lavorano la mandorla in maniera artigianale con il miele, fino ad ottenere una pura pasta di mandorla,
+            che può inoltre essere aromatizzata al limone o all'arancia e ricoperta di zucchero a velo.
+          </p>
+        </div>
+      </div>
+      <hr class="hr-main">
+      <div class="row">
+        <div class="col-md-6 col-margined">
+          <h2>La tradizione con te</h2>
+          <p>
+          I “Pinseri” portano con sè il gusto e la sapienza della tradizione culinaria siciliana. Ogni “Pinseri” è unico e ti regala un proverbio in dialetto siciliano, riportandoti alle atmosfere della
+          sua terra d’origine. Scarta il biscotto e leggi il biglietto che trovi al suo
+          interno. Una frase in dialetto ti farà sorridere e conoscere le sonorità e il fascino della nostra lingua.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img class="img-responsive" src="{{ STATIC_URL }}img/biglietto verticale.png">
+        </div>
+      </div>
 		</div>
-		<div class ="row">
-			{% block lang_choose %}
-            <ul id="set_lang" class="nav pull-left">
-              {% if example_vars.SOLID_I18N_USE_REDIRECTS %}
-                {% if LANGUAGE_CODE == 'en' %}
-                  <li>
-                    <form action="/i18n/setlang/" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{request.get_full_path}}" />
-                    <input name="language" type="hidden" value="en" />
-                    <input type="submit" class="lang_active" value="EN" />
-                    </form>
-                  </li>
-                  <li>
-                    <form action="/i18n/setlang/" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="/it{{request.get_full_path}}" />
-                    <input name="language" type="hidden" value="it" />
-                    <input type="submit" value="IT" />
-                    </form>
-                  </li>
-                {% else %}
-                  <li>
-                    <form action="/i18n/setlang/" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{request.get_full_path|slice:'3:'}}" />
-                    <input name="language" type="hidden" value="en" />
-                    <input type="submit" value="EN" />
-                    </form>
-                  </li>
-
-                  <li>
-                    <form action="/i18n/setlang/" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{request.get_full_path}}" />
-                    <input name="language" type="hidden" value="it" />
-                    <input type="submit" class="lang_active" value="IT" />
-                    </form>
-                  </li>
-                {% endif %}
-              {% else %}
-                    {% if LANGUAGE_CODE == 'en' %}
-                      <li><a class="lang_active" href="{{request.get_full_path}}" >EN</a></li>
-                      <li><a href="/it{{request.get_full_path}}" >IT</a></li>
-                    {% else %}
-                      <li><a href="{{request.get_full_path|slice:'3:'}}" >EN</a></li>
-                      <li><a class="lang_active" href="{{request.get_full_path}}" >IT</a></li>
-                    {% endif %}
-              {% endif %}
-              </ul>
-            {% endblock lang_choose %}
-		</div>
-	</div>
+  </div>
 {% endblock %}
 
 {% block ext_javascript}
-<script>
-	$('#myCarousel').carousel();
-</script>

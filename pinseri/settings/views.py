@@ -7,3 +7,4 @@ def home(request):
                             'user': request.user})
    return render_to_response('thirdauth/home.html',
                              context_instance=context)
+

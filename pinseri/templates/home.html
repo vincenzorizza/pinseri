@@ -2,18 +2,7 @@
 {% load i18n %}
 {% block page_title %}Home{% endblock %}
 {% block ext_css %}
-<!--
-	{% load compress %}
-    {% if debug %}
-        <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}css/home.less" />
-        <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
-    {% else %}
-        {% compress css %}
-            <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}css/home.less" />
-        {% endcompress %}
-    {% endif %}
-    -->
-    <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}css/home.less" />
+    <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}css/home.less" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
 {% endblock %}
 {% block body_class %}{{ block.super }}home{% endblock %}
@@ -88,21 +77,21 @@
 				<div class="col-md-6">
 					<h2>{% trans "Un prodotto esclusivo." %} <span>{% trans "Solo elementi di qualità." %}</span></h2>
 					<p>{% trans "Il gusto unico e genuino dei biscotti alle mandorle si unisce al design e alla tradizione per dare vita ad un prodotto innovativo. La confezione, smart ed elegante, è ideata per adattarsi ad ogni situazione ed è utilizzabile come dessert line per hotel, ristoranti e B&b. All'interno, un <em>pensiero</em> in dialetto siciliano accompagna la degustazione e caratterizza il nostro prodotto, rendendolo particolare ed esclusivo." %}</o>
-					<p><a href="#">{% trans "Scopri in dettaglio tutte le caratteristiche del nostro prodotto" %}</a></p>
+					<p><a href="./product/">{% trans "Scopri in dettaglio tutte le caratteristiche del nostro prodotto" %}</a></p>
 				</div>
 				<div class="col-md-6">
-					<img class="img-responsive center-block" src="{{ STATIC_URL }}img/prodotto.png">
+					<a href="./product/"><img class="img-responsive center-block" src="{{ STATIC_URL }}img/prodotto.png"></a>
 				</div>
 			</div>
 			<hr class="hr-main">
 			<div class="row" id="row3">
 				<div class="col-md-6">
-					<img class="img-responsive center-block" src="{{ STATIC_URL }}img/servizio10.png">
+					<a href="./service/"><img class="img-responsive center-block" src="{{ STATIC_URL }}img/servizio10.png"></a>
 				</div>
 				<div class="col-md-6">
 					<h2>{% trans "Un servizio unico." %} <span>{% trans "Spedizioni in tutto il mondo." %}</span></h2>
 					<p>{% trans "I migliori pasticceri della Sicilia Orientale ci forniscono giornalmente le paste di mandorla che vengono successivamente confezionate a mano ed imballate con cura per mantenere intatte le confezioni. Effettuiamo spedizioni in tutto il mondo grazie alla qualità della ricetta originale delle paste di mandorla che mantiene il prodotto integro e ben conservato." %}</p>
-					<p><a href="#">{% trans "Visualizza tutti i dettagli del nostro servizio" %}</a></p>
+					<p><a href="./service/">{% trans "Visualizza tutti i dettagli del nostro servizio" %}</a></p>
 				</div>
 			</div>
 		</div>

@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}
 <html lang="{{LANGUAGE_CODE}}">
-<!-- Prova -->
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -16,34 +15,37 @@
         <meta name="description" content="{% block meta_description %}{% endblock %}" />
         <meta name="author" content="{% block meta_author %}{% endblock %}" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/logo.png" />
+        <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.png" />
 
         {% block css %}
+        
             <!-- Bootstrap -->
             <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet">
             <link href="{{ STATIC_URL }}css/bootstrap-theme.min.css" rel="stylesheet">
             <!--<link href="{{ STATIC_URL }}css/fbposter.css" rel="stylesheet">-->
-
-<!--
-            {% load compress %}
-            {% if debug %}
+            <!--
+            {% if debug == False %}
                 <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-                <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}css/main.less" />
+                <link rel="stylesheet/less" type="text/less" media="all" href="{{ STATIC_URL }}css/main.less" />
                 <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
             {% else %}
+                {% load compress %}
                 {% compress css %}
-                    <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-                    <link rel="stylesheet" type="text/less" media="all" href="{{ STATIC_URL }}less/style.less" />
+                    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/normalize.css" />
+                    <link rel="stylesheet" type="text/less" href="{{ STATIC_URL }}css/main.less" />
                 {% endcompress %}
             {% endif %}
             -->
             <link rel="stylesheet" href="{{ STATIC_URL }}css/normalize.css" />
-            <link rel="stylesheet/less" type="text/css" media="all" href="{{ STATIC_URL }}css/main.less" />
+            <link rel="stylesheet/less" type="text/less" media="all" href="{{ STATIC_URL }}css/main.less" />
+            
+            <!-- Extends css libraries -->
+            {% block ext_css %}{% endblock ext_css %}
+
             <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.7.3/less.min.js"></script>
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-            <!-- Extends css libraries -->
-            {% block ext_css %}{% endblock ext_css %}
+            
         {% endblock %}
 
         <script src="{{ STATIC_URL }}js/vendor/modernizr-2.6.2.min.js"></script>
@@ -70,15 +72,16 @@
                     </div>
             
                 </div>
-          
+                
+
                 <div class="navbar-collapse collapse">
                     <ul class="nav nav-justified">
                         <li><a href="/prova/">Home</a></li>
                         <li><a href="/prova/product/">{% trans "Prodotto" %}</a></li>
                         <li><a href="/prova/service/">{% trans "Servizio" %}</a></li>
-                        <li class="li-brand"><a class="" href=""><img id="logo" src="{{ STATIC_URL }}img/logo.png" alt="logo"/></a></li>
-                        <li><a href="/prova/order/">{% trans "Contatti" %}</a></li>
-                        <li><a href="#">About</a></li>
+                        <li class="li-brand"><a href="/"><img id="logo" src="{{ STATIC_URL }}img/logo.png" alt="logo"/></a></li>
+                        <li><a href="/prova/contact/">{% trans "Contatti" %}</a></li>
+                        <li><a href="/prova/about/">About</a></li>
 
                           <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -127,7 +130,7 @@
                         <ul>
                             <li><a href="mailto:info@pinseri.it"><i class="fa fa-at fa-2x"></i><span>info@pinseri.it</span></a></li>
                             <li><a href=""><i class="fa fa-facebook-square fa-2x"></i><span>Facebook.com/pinseri.food</span></a></li>
-                            <li><a href=""><i class="fa fa-instagram fa-2x"></i></span>@pinseri.food</span></a></li>
+                            <li><a href=""><i class="fa fa-instagram fa-2x"></i><span>@pinseri.food</span></a></li>
                     </div>
 
                 </div>

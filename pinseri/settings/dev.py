@@ -1,16 +1,16 @@
 # Django project environment-specific settings
-
 from pinseri.settings.base import *
+from django.conf.urls.static import static
+from django.conf import settings
 
-if socket.gethostname() == 'vincenzo-DOTS' or 'vincenzo-Lenovo-IdeaPad-S510p' or socket.gethostname() == 'giles-liveconsole1':
+if socket.gethostname() == 'vincenzo-DOTS' or socket.gethostname() == 'vincenzo-Lenovo-IdeaPad-S510p' or socket.gethostname() == 'giles-liveconsole1':
     DEBUG = TEMPLATE_DEBUG = True
-
+elif socket.gethostname() == 's19.wservices.ch':
+    DEBUG = TEMPLATE_DEBUG = False
 else:
     DEBUG = TEMPLATE_DEBUG = False
 
-print "DEBUG = "
-print socket.gethostname()
-print DEBUG
+print "DEBUG = " + str(DEBUG) + " on " + socket.gethostname()
 
 SITE_ID = 1
 INTERNAL_IPS = ('127.0.0.1', )
@@ -26,6 +26,8 @@ ALLOWED_HOSTS = [
     'vincenzorizza.pythonanywhere.com.',
     'pinseri.it',
     'pinseri.it.',
+    'www.pinseri.it',
+    'www.pinseri.it.',
 ]
 
 DATABASES = {
@@ -47,7 +49,7 @@ MEDIA_URL = '/media/'
 
 # Overwrite default ROOT_URLCONF to include static file serving by Django.
 # In production, this should be handled separately by your webserver or CDN.
-ROOT_URLCONF = 'pinseri.urls.dev'
+#ROOT_URLCONF = 'pinseri.urls.dev'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -58,9 +60,12 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    #os.path.join(PROJECT_ROOT, 'static/css/'),
+    os.path.join(PROJECT_ROOT, 'static'),
     #"/home/vincenzo/Projects/Django/pinseri/pinseri/static",
 )
 
+#COMPRESS_URL = STATIC_URL
+#COMPRESS_ROOT = STATIC_ROOT
+#COMPRESS_STORAGE = "staticfiles.storage.StaticFileStorage"
 
 
